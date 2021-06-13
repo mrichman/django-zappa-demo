@@ -1,0 +1,23 @@
+version: 0.2
+​
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - python -m venv env
+      - . env/bin/activate
+      - pip install -U pip
+      - pip install -r requirements.txt
+​
+  build:
+    commands:
+       - zappa update dev
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
