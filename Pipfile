@@ -1,0 +1,21 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+zappa = "*"
+psycopg2-binary = "*"
+boto3 = "*"
+django-s3-storage = "*"
+
+[dev-packages]
+black = "*"
+pylama = "*"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
