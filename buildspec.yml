@@ -12,10 +12,12 @@ phases:
 
   build:
     commands:
+      - zappa status dev
       - zappa update dev
 
   post_build:
     commands:
+      - if [ $CODEBUILD_BUILD_SUCCEEDING = 0 ]; then zappa rollback dev -n 1; exit 1; fi
       - echo Build completed on `date`
 
 artifacts:
