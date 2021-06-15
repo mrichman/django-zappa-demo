@@ -1,5 +1,5 @@
 version: 0.2
-​
+
 phases:
   install:
     runtime-versions:
@@ -9,10 +9,10 @@ phases:
       - . env/bin/activate
       - pip install -U pip
       - pip install -r requirements.txt
-​
+
   build:
     commands:
-       - zappa update dev
+      - zappa update dev
 
   post_build:
     commands:
@@ -20,4 +20,4 @@ phases:
 
 artifacts:
   files:
-    - '**/*'
+    - "**/*"
